@@ -1,11 +1,12 @@
 <?php
-namespace BrandedCrate\PayJunction;
+namespace Chalam\PayJunction;
 
-use BrandedCrate\PayJunction\TransactionClient;
-use BrandedCrate\PayJunction\CustomerClient;
-use BrandedCrate\PayJunction\CustomerVaultClient;
-use BrandedCrate\PayJunction\ReceiptClient;
-use BrandedCrate\PayJunction\Exception;
+use Chalam\PayJunction\TransactionClient;
+use Chalam\PayJunction\CustomerClient;
+use Chalam\PayJunction\CustomerVaultClient;
+use Chalam\PayJunction\CustomerAddress;
+use Chalam\PayJunction\ReceiptClient;
+use Chalam\PayJunction\Exception;
 
 class Client
 {
@@ -24,7 +25,7 @@ class Client
 
         $this->userAgent = 'PayJunctionPHPClient/' .
             "$this->packageVersion " .
-            '(BrandedCrate; PHP v' .
+            '(Chalam; PHP v' .
             phpversion() .
             ')';
 
@@ -249,5 +250,17 @@ class Client
             $this->customerVaultClient = new CustomerVaultClient($this->options);
         }
         return $this->customerVaultClient;
+    }
+    
+    /**
+     * @description returns an instance of the customerAddress client
+     * @return CustomerAddress
+     */
+    public function customerAddress()
+    {
+        if (!isset($this->customerAddress) && isset($this->options)) {
+            $this->customerAddress = new CustomerAddress($this->options);
+        }
+        return $this->customerAddress;
     }
 }
