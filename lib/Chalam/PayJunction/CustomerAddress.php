@@ -1,5 +1,5 @@
 <?php
-namespace BrandedCrate\PayJunction;
+namespace Chalam\PayJunction;
 
 class CustomerAddress extends Client
 {

@@ -11,11 +11,11 @@ Installation
 The module can be installed using Composer:
 
 ```bash
-php composer.phar require brandedcrate/payjunction:*
+php composer.phar require chalam/payjunction:*
 ```
 
-BrandedCrate\PayJunction fully supports PayJunction's REST API for
-transactions, customers and receipts. Support for other resources is on the
+Chalam\PayJunction fully supports PayJunction's REST API for
+transactions, customers, addresses and receipts. Support for other resources is on the
 way.
 
 This library has no third-party dependencies.
@@ -23,11 +23,11 @@ This library has no third-party dependencies.
 Usage
 ------------
 
-Instantiate an instance of \BrandedCrate\PayJunction\Client which provides
+Instantiate an instance of \Chalam\PayJunction\Client which provides
 access to all the available resources.
 
 ```php
-use BrandedCrate\PayJunction;
+use Chalam\PayJunction;
 
 $pj = new PayJunction\Client(array(
     'username' => 'YOUR-USERNAME',
@@ -41,12 +41,12 @@ Error Handling
 --------------
 
 Any errors, including not found errors will be thrown as exceptions of type
-`BrandedCrate\PayJunction\Exception`. Generally, you should wrap each
+`Chalam\PayJunction\Exception`. Generally, you should wrap each
 PayJunction call in a try/catch block because you might have a bad request and
 PayJunction might throw an error.
 
 ```php
-use BrandedCrate\PayJunction;
+use Chalam\PayJunction;
 
 try {
     $pj->customer()->read('doesntexist');
