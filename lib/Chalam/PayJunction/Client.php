@@ -4,7 +4,7 @@ namespace Chalam\PayJunction;
 use Chalam\PayJunction\TransactionClient;
 use Chalam\PayJunction\CustomerClient;
 use Chalam\PayJunction\CustomerVaultClient;
-use Chalam\PayJunction\CustomerAddress;
+use Chalam\PayJunction\CustomerAddressClient;
 use Chalam\PayJunction\ReceiptClient;
 use Chalam\PayJunction\Exception;
 
@@ -258,9 +258,9 @@ class Client
      */
     public function customerAddress()
     {
-        if (!isset($this->customerAddress) && isset($this->options)) {
-            $this->customerAddress = new CustomerAddress($this->options);
+        if (!isset($this->customerAddressClient) && isset($this->options)) {
+            $this->customerAddressClient = new CustomerAddressClient($this->options);
         }
-        return $this->customerAddress;
+        return $this->customerAddressClient;
     }
 }

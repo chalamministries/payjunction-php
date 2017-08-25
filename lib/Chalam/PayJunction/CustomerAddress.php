@@ -1,7 +1,7 @@
 <?php
 namespace Chalam\PayJunction;
 
-class CustomerAddress extends Client
+class CustomerAddressClient extends Client
 {
     /**
      * create a new customer vault
