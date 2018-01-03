@@ -1,6 +1,7 @@
 <?php
 namespace Chalam\PayJunction;
 
+use Chalam\PayJunction\SmartTerminalClient;
 use Chalam\PayJunction\TransactionClient;
 use Chalam\PayJunction\CustomerClient;
 use Chalam\PayJunction\CustomerVaultClient;
