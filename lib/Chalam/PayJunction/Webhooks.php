@@ -31,7 +31,7 @@ class Webhooks extends Client
      */
     public function update($webhookId, $params)
     {
-        return $this->put('/webhooks/'. $id, $params);
+        return $this->put('/webhooks/'. $webhookId, $params);
 
     }
 
@@ -41,7 +41,7 @@ class Webhooks extends Client
      */
     public function delete($webhookId)
     {
-        return $this->delete('/webhooks/'.$id);
+        return $this->delete('/webhooks/'.$webhookId);
 
     }
 }
