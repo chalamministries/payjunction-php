@@ -265,4 +265,28 @@ class Client
         }
         return $this->customerAddressClient;
     }
+    
+    /**
+     * @description returns an instance of the smartTerminal client
+     * @return SmartTerminal
+     */
+    public function smartterminal()
+    {
+        if (!isset($this->smartTerminalClient) && isset($this->options)) {
+            $this->smartTerminalClient = new SmartTerminalClient($this->options);
+        }
+        return $this->smartTerminalClient;
+    }
+    
+    /**
+     * @description returns an instance of the smartTerminal client
+     * @return SmartTerminal
+     */
+    public function webhook()
+    {
+        if (!isset($this->webhookClient) && isset($this->options)) {
+            $this->webhookClient = new Webhooks($this->options);
+        }
+        return $this->webhookClient;
+    }
 }
