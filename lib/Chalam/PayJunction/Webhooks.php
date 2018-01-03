@@ -29,9 +29,9 @@ class Webhooks extends Client
      * @param $params
      * @return array|mixed
      */
-    public function update($webhookId)
+    public function update($webhookId, $params)
     {
-        return $this->put('/webhooks/'.$id, $params);
+        return $this->put('/webhooks/'. $id, $params);
 
     }
 
