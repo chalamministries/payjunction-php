@@ -39,7 +39,7 @@ class Webhooks extends Client
      * @description deletes webhook
      * @return array|mixed
      */
-    public function delete($webhookId)
+    public function remove($webhookId)
     {
         return $this->delete('/webhooks/'.$webhookId);
 
