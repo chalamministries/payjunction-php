@@ -45,4 +45,14 @@ class SmartTerminalClient extends Client
         return $this->get('/smartterminals');
 
     }
+    
+    /**
+     * @description lists smart terminals on account
+     * @return array|mixed
+     */
+    public function terminals()
+    {
+        return $this->get('/terminals');
+
+    }
 }
