@@ -21,7 +21,7 @@ class SmartTerminalClient extends Client
      */
     public function main($id)
     {
-        return $this->get('/smartterminals/'.$id .'/main');
+        return $this->post('/smartterminals/'.$id .'/main');
 
     }
 
@@ -32,7 +32,7 @@ class SmartTerminalClient extends Client
      */
     public function status($paymentId)
     {
-        return $this->put('/smartterminals/requests/'.$paymentId);
+        return $this->get('/smartterminals/requests/'.$paymentId);
 
     }
 
@@ -42,7 +42,7 @@ class SmartTerminalClient extends Client
      */
     public function list()
     {
-        return $this->post('/smartterminals');
+        return $this->get('/smartterminals');
 
     }
 }
