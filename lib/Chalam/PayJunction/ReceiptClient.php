@@ -47,4 +47,9 @@ class ReceiptClient extends Client
     {
         return $this->post('/transactions/'.$transactionId.'/receipts/latest/email', $params);
     }
+    
+    public function signature($transactionId, $params = null)
+    {
+	    return $this->post('/transactions/'.$transactionId.'/receipts/latest/signature', $params);
+    }
 }
