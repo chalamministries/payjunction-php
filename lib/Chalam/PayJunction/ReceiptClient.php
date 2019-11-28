@@ -50,6 +50,6 @@ class ReceiptClient extends Client
     
     public function signature($transactionId, $params = null)
     {
-	    return $this->post('/transactions/'.$transactionId.'/receipts/latest/signature', $params);
+	    return $this->get('/transactions/'.$transactionId.'/receipts/latest/signature', $params);
     }
 }
