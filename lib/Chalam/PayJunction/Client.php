@@ -16,6 +16,7 @@ class Client
     public $liveEndpoint = 'https://api.payjunction.com';
     public $testEndpoint = 'https://api.payjunctionlabs.com';
     public $packageVersion;
+    public $apiVersion;
     public $userAgent;
     public $endpoint;
     public $curl;
@@ -24,7 +25,7 @@ class Client
     {
         $this->options = $options;
         $this->packageVersion = $this->readPackageVersion();
-
+		$this->apiVersion = "2019-07-30";
         $this->userAgent = 'PayJunctionPHPClient/' .
             "$this->packageVersion " .
             '(Chalam; PHP v' .
@@ -74,6 +75,7 @@ class Client
         curl_setopt($this->curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         curl_setopt($this->curl, CURLOPT_USERPWD, $this->options['username'] . ":" . $this->options['password']);
         curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(
+	        "PJ-Version: {$this->apiVersion}"
             "X-PJ-Application-Key: {$this->options['appkey']}",
             "User-Agent: $this->userAgent",
         ));
