@@ -55,4 +55,15 @@ class SmartTerminalClient extends Client
         return $this->get('/terminals');
 
     }
+    
+    /**
+     * @description returns signature captured
+     * @param $signatureId
+     * @return image/png
+     */
+    public function signature($signatureId)
+    {
+        return $this->get('/smartterminals/signatures/'.$signatureId.'/image');
+
+    }
 }
