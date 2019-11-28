@@ -75,7 +75,7 @@ class Client
         curl_setopt($this->curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         curl_setopt($this->curl, CURLOPT_USERPWD, $this->options['username'] . ":" . $this->options['password']);
         curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(
-	        "PJ-Version: {$this->apiVersion}"
+	        "PJ-Version: {$this->apiVersion}",
             "X-PJ-Application-Key: {$this->options['appkey']}",
             "User-Agent: $this->userAgent",
         ));
