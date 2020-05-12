@@ -44,4 +44,14 @@ class CustomerClient extends Client
     {
         return $this->del("/customers/$id");
     }
+    
+    /**
+     * @description lists all customer
+     * @param $id
+     * @return array|mixed
+     */
+    public function list($params = null)
+    {
+        return $this->get("/customers", $params);
+    }
 }
